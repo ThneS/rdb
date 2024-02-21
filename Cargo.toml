@@ -16,3 +16,6 @@ path = "src/server.rs"
 [[bin]]
 name = "rdb_client"
 path = "src/client.rs"
+
+[dev-dependencies]
+tokio = { version = "1.36.0", features = ["full"] }
