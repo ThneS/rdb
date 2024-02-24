@@ -28,14 +28,14 @@ fn parse_select_statement(input: &str) -> IResult<&str, SelectStatement> {
     map(
         tuple((
             preceded(tag("SELECT"), preceded(multispace1, parse_column_list)),
-            preceded(preceded(multispace1, tag("FROM")), parse_identifier),
+            preceded(preceded(multispace1, tag("FROM")), preceded(multispace1, parse_identifier)),
         )),
         |(columns, table)| SelectStatement { columns, table },
     )(input)
 }
 
 fn main() {
-    let sql = "SELECT column1,column2 FROM table_name";
+    let sql = "SELECT columna, columnb FROM table";
     match parse_select_statement(sql) {
         Ok((remaining, ast)) => {
             println!("AST: {:?}, Remaining: {}", ast, remaining);
