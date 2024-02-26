@@ -2,16 +2,15 @@
 rust db
 ```
 rdb
-├── Cargo.toml
-├── LICENSE
-├── README.md
+.
 ├── doc
 │   └── assets
+├── examples
 ├── src
-│   ├── common       
 │   ├── executor
 │   ├── interface
-│   ├── main.rs
+│   ├── network
 │   ├── parser
 │   └── storage
+
 ```
